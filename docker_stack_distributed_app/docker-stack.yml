@@ -2,8 +2,6 @@
 # trying it in compose will fail because of multiple replicas trying to bind to the same port
 # Swarm currently does not support Compose Spec, so we'll pin to the older version 3.9
 
-version: "3.9"
-
 services:
 
   redis:
@@ -12,7 +10,7 @@ services:
       - frontend
 
   db:
-    image: postgres:15-alpine
+    image: postgres:alpine
     environment:
       POSTGRES_USER: "postgres"
       POSTGRES_PASSWORD: "postgres"
